@@ -3,6 +3,7 @@ ___
 
 1. __Pruebas Unitarias.__
 2. __Introducción a los Mocks.__
+3. __Configurando el Proveedor en Memoria.__
 
 #### Pruebas Unitarias
 
@@ -22,3 +23,21 @@ Al ejecutar las pruebas, estas son éxitosas.
 
 #### Introducción a los Mocks
 
+Es un objeto el cual intenta suplantar una dependencia de una clase, es útil si se quiere usar dependencia como _Web Services_. 
+
+Nos permite personalizar el comportamiento de dependencias de las clases que queremos ejecutar. 
+
+Desde la prueba unitarias podemos probar una clase ignorando sus dependencias, aunque no es obligatoria usar mocks. 
+
+Al crear una prueba para `ActualizadorObservableCollectionService.cs` se crea dos _Mocks_, uno que hará la función del mapeador y otra del id. 
+
+Se crea el archivo de prueba con nombre `ActualizadorObservableCollectionPruebas.cs` con tres pruebas a evaluar. 
+
+![ActualizadorObservableCollectionPruebas](/PeliculasWebAPI/images/ActualizadorObservableCollectionPruebas.png)
+
+Al ejecutar las pruebas, todas son éxitosas. 
+
+![ResultadoActualizadoObservable](/PeliculasWebAPI/images/ActualizadorObservableCollectionPruebas%20Resultado.PNG)
+
+
+#### Configurando el Proveedor en Memoria
