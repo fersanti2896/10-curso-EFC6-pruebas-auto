@@ -4,6 +4,7 @@ ___
 1. __Pruebas Unitarias.__
 2. __Introducción a los Mocks.__
 3. __Configurando el Proveedor en Memoria.__
+4. __Prueba Unitaria en Entity Framework.__
 
 #### Pruebas Unitarias
 
@@ -41,3 +42,22 @@ Al ejecutar las pruebas, todas son éxitosas.
 
 
 #### Configurando el Proveedor en Memoria
+
+Para hacer pruebas que incluyan al `ApplicationDbContext` de `Entity Framework` , el cual se probará los comportamientos (responsabilidades) y no sólo una función. 
+
+Para hacerlo usamos el proveedor en memoria. Instalamos el paquete `Microsoft.EntityFrameworkCore.InMemory` y debemos instancia al menos 2 `DbContext`, uno para para cargar la data y el otro el que se va inyectar. 
+
+Cada prueba automática debe tener su propia base de datos esto con el fin de que cada prueba no afecte a la otra. 
+
+`NOTA: El proveedor de memoria no trabaja con tablas temporales, por el cual se deben hacer cambios en la solución del proyecto. Además de evitar usar Seeding, esto porque se registrar los datos en las tablas temporales`.
+
+Instanciamos el `DbContext` en nuestro proyecto. 
+
+![BasePruebas](/PeliculasWebAPI/images/BasePruebas.png)
+
+Y en nuestro `ApplicationDBContext.cs` como tenemos data de tipo `Seeding` debemos evitar que se sobreescriban la data en las Bases de Datos Temporales.
+
+![ApplicationDbContext](/PeliculasWebAPI/images/ApplicationDbContext.png)
+
+#### Prueba Unitaria en Entity Framework
+

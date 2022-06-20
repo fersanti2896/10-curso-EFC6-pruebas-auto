@@ -13,11 +13,11 @@ namespace PeliculasWebAPI.Entidades.Configuraciones {
             });
 
             /* Configura columna de tipo Desde */
-            builder.Property("Desde")
+            builder.Property<DateTime>("Desde")
                    .HasColumnType("datetime2");
 
             /* Configura la columna de tipo Hasta */
-            builder.Property("Hasta")
+            builder.Property<DateTime>("Hasta")
                    .HasColumnType("datetime2");
 
             builder.HasMany(typeof(FacturaDetalle))

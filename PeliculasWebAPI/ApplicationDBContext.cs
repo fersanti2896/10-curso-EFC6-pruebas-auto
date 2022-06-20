@@ -82,10 +82,12 @@ namespace PeliculasWebAPI {
              * todas las configuraciones que heredan de IEntityTypeConfiguration */
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            SeedingModuloConsulta.Seed(modelBuilder);
-            SeedingPersonaMensaje.Seed(modelBuilder);
-            SeedingFacturas.Seed(modelBuilder);
-
+            if (!Database.IsInMemory()) {
+                SeedingModuloConsulta.Seed(modelBuilder);
+                SeedingPersonaMensaje.Seed(modelBuilder);
+                SeedingFacturas.Seed(modelBuilder);
+            }     
+            
             /* Registro de Clase Auxiliar de Funciones Definidas por el Usuario */
             Escalares.RegistrarFunciones(modelBuilder);
 

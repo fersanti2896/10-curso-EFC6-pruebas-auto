@@ -11,11 +11,11 @@ namespace PeliculasWebAPI.Entidades.Configuraciones {
             });
 
             /* Configura columna de tipo PeriodStart */
-            builder.Property("PeriodStart")
+            builder.Property<DateTime>("PeriodStart")
                    .HasColumnType("datetime2");
 
             /* Configura la columna de tipo PeriodEnd */
-            builder.Property("PeriodEnd")
+            builder.Property<DateTime>("PeriodEnd")
                    .HasColumnType("datetime2");
 
             /* Hacemos el atributo identificador de la clase Genero llave primaria */
