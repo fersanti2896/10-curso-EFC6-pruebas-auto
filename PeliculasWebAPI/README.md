@@ -5,6 +5,7 @@ ___
 2. __Introducción a los Mocks.__
 3. __Configurando el Proveedor en Memoria.__
 4. __Prueba Unitaria en Entity Framework.__
+5. __Configurando AutoMapper - Pruebas Negativas.__
 
 #### Pruebas Unitarias
 
@@ -60,4 +61,16 @@ Y en nuestro `ApplicationDBContext.cs` como tenemos data de tipo `Seeding` debem
 ![ApplicationDbContext](/PeliculasWebAPI/images/ApplicationDbContext.png)
 
 #### Prueba Unitaria en Entity Framework
+
+La forma en que podemos hacer una prueba unitaria desde Entity Framework sin usar un mocks, podemos usar una clase que definimos previamente `BasePrueba.cs` donde viene el `DbContext`.
+
+Creamos una clase de prueba el cual probaremos un método de tipo `POST` de `GenerosController.cs` el cual crea varios géneros al mismo tiempo en `GenerosControllerPruebas`. 
+
+![POSTGenerosControllerPruebas](/PeliculasWebAPI/images/Post_EnvioInserccionGeneros%20GenerosControllerPruebas.png)
+
+Al ejecutar la prueba, esta da resultado positivo. 
+
+![GenerosControllerPruebasPrueba](/PeliculasWebAPI/images/Post_EnvioInserccionGeneros%20Resultado.PNG)
+
+#### Configurando AutoMapper para pruebas - Pruebas Negativas
 
