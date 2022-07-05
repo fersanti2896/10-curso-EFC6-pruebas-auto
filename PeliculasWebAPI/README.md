@@ -6,6 +6,7 @@ ___
 3. __Configurando el Proveedor en Memoria.__
 4. __Prueba Unitaria en Entity Framework.__
 5. __Configurando AutoMapper - Pruebas Negativas.__
+6. __Usando LocalDb en Pruebas Automáticas.__
 
 #### Pruebas Unitarias
 
@@ -72,5 +73,22 @@ Al ejecutar la prueba, esta da resultado positivo.
 
 ![GenerosControllerPruebasPrueba](/PeliculasWebAPI/images/Post_EnvioInserccionGeneros%20Resultado.PNG)
 
-#### Configurando AutoMapper para pruebas - Pruebas Negativas
+#### Configurando AutoMapper para Pruebas - Pruebas Negativas
 
+Primero configuramos nuestro AutoMapper. 
+
+![automapper](/PeliculasWebAPI/images/ConfigurandoAutoMapper.png)
+
+Vamos a simular una prueba negativa donde un endpoint debe de volver una excepción en caso de que se mande algo incorrecto en `GenerosControllerPrueba.cs`. 
+
+![PutEnvioExcepcion](/PeliculasWebAPI/images/PUR_EnvioExcepcion.png)
+
+Al simular la prueba positiva en `GenerosControllerPrueba.cs`.
+
+![PutEnvioCorrecto](/PeliculasWebAPI/images/PUR_EnvioCorrecto.png)
+
+Al correr las pruebas estás dan como éxito. 
+
+![PruebasExitosas](/PeliculasWebAPI/images/pruebaMapperCorrecta.PNG)
+
+#### Usando LocalDb en Pruebas Automáticas
