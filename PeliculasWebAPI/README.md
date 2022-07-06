@@ -92,3 +92,16 @@ Al correr las pruebas estás dan como éxito.
 ![PruebasExitosas](/PeliculasWebAPI/images/pruebaMapperCorrecta.PNG)
 
 #### Usando LocalDb en Pruebas Automáticas
+
+LocalDb es una base de datos parecida a SQL Server, solo que almacena pocos registros. 
+
+Se usa este motor de bases de datos ya que crearemos y borraremos la BD con cada ejecución de test suite para que se puedan a volver a correr la pruebas en cualquier ámbiente que tenga LocalDd instalado.
+
+Crearemos una clase auxiliar que hará todo este trabajo por nosotros el cual tendrá nombr de `LocalDbInicializador.cs`.
+
+![localconfig](/PeliculasWebAPI/images/LocalDbInicializador.png)
+
+Probamos el método en `CinesControllerPruebas.cs`.
+
+![cinespruebas](/PeliculasWebAPI/images/CinesControllerPruebas.png)
+
